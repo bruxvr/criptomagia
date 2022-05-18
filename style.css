@@ -1,0 +1,11 @@
+body {
+    background-image: linear-gradient(to bottom right, #E0BCF3, #7EE7EE);
+    background-size: cover;
+}
+
+section textarea {
+    height: 10em; 
+    /*  rows  */
+    width: 33em;
+    /* cols */
+}
