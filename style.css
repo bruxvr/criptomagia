@@ -1,3 +1,7 @@
+* {
+    font-family: 'Dosis', sans-serif;
+}
+
 body {
     background-image: linear-gradient(to bottom right, #E0BCF3, #7EE7EE);
     background-size: cover;
@@ -8,4 +12,9 @@ section textarea {
     /*  rows  */
     width: 33em;
     /* cols */
+}
+
+header h1, p {
+    text-align: center;
+    
 }
