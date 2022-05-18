@@ -5,31 +5,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel ="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!--  fonte -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- /fonte -->
     <script src="script.js" defer></script>
     <title>Criptomagia</title>
 </head>
 <body>
     <!-- HEADER -->
  <header>
+     <h1 class="titulo">CRIPTOMAGIA</h1>
+     <p>Criptografia em um passe de mágica</p>
 
  </header>
     <!-- FORM  -->
         <form action="" class="container">
-            <h1 class="titulo">CRIPTOMAGIA</h1>
-            <p>Criptografia em um passinho</p>
             <section class="escolha">
 
                 <!-- radio button: base64 ou cifra -->
 
-                <select name="escolha" id="tipoDeCripto">
-                    <option value="tipo de criptografia" disabled selected>Selecione a opção</option>
-                    <option value="base64-cipher">Base64</option>
-                    <option value="caesar-cipher">Cifra de César</option>
+                <select name="codigo" id="codigo">
+                    <option value="tipoDeCodigo" disabled selected>Selecione a opção</option>
+                    <option value="caesarCipher">Cifra de César</option>
+                    <option value="base64">Base64</option>
                 </select>
                 
                 <!-- codificar ou decodificar -->
 
-                <input class="someOpcao" id="someOpcao" type="number" placeholder="Número de passinhos">
+                <input class="incremento" id="incremento" type="number" placeholder="Número de passinhos">
                 <div class="metodo">
                     <input checked type="radio" id="encode" name="escolhaDeMetodo" value="encode">
                     <label for="escolhaDeMetodo">Codificar</label>
@@ -48,7 +53,7 @@
             
                 <!-- readonly -> box apenas para resultado -->
             </section>
-            <button type="button" id="botao">PRONTO!</button>
+            <button type="button" id="magica">Mágica</button>
             <button type="button" id="botaoReset">RESET</button>
 
 
