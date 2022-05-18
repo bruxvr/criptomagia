@@ -32,30 +32,30 @@ tipoDeCodigo.addEventListener('change', function (tipoDeCodigo) {
 
     if (codigoEscolhido == 'base64') {
         incremento.style.display = 'none'
-        botaoPronto.setAttribute('onclick', base64())
+        magica.setAttribute('onclick', base64())
     }
     else {
         incremento.style.display = 'inline'
-        botaoPronto.setAttribute('onclick', caesarCipher())
+        magica.setAttribute('onclick', caesarCipher())
     }  
 
         
 })
 
 // trocando escrita do botão -> codificar e decodificar
-var botaoPronto = document.querySelector('#magica')
+var magica = document.querySelector('#magica')
 
 var encoding = document.querySelector('#encode')
 
 encoding.addEventListener('click', function() {
     
-    botaoPronto.innerText = 'Codificar!'
+    magica.innerText = 'Codificar!'
 })
 
 var decoding = document.querySelector('#decode') 
 
 decoding.addEventListener('click', function() {
-    botaoPronto.innerText = "Decodificar!"
+    magica.innerText = "Decodificar!"
     
 })
 
