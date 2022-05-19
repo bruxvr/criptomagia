@@ -11,17 +11,16 @@
 
 // input do usuário
 
-inputDoUsuario = function () {
-    let input = document.querySelector('#input')
-    input = input.value
-    return input
+function inputDoUsuario() {
+    let input = document.getElementById("inputDoUsuario")
+    return input.value
 }
 
 // retorno codificado/decodificado do input do usuário
 function outputDaMensagem(resultadoDaMensagem) {
-    let output = document.querySelector('#output')
-    output = output.value = '${resultadoDaMensagem}'
-    return output
+    let output = document.querySelector('#outputDaMensagem')
+    output.value = resultadoDaMensagem
+    return
 }
 
 // função para verificar qual tipo de código o usuário escolheu no radio button
@@ -32,37 +31,76 @@ tipoDeCodigo.addEventListener('change', function (tipoDeCodigo) {
 
     if (codigoEscolhido == 'base64') {
         incremento.style.display = 'none'
-        magica.setAttribute('onclick', base64())
     }
     else {
         incremento.style.display = 'inline'
-        magica.setAttribute('onclick', caesarCipher())
-    }  
+    }
 
-        
+
 })
 
 // trocando escrita do botão -> codificar e decodificar
-var magica = document.querySelector('#magica')
+var magica = document.getElementById('magica')
 
-var encoding = document.querySelector('#encode')
+var encoding = document.getElementById('encode')
 
-encoding.addEventListener('click', function() {
-    
+encoding.addEventListener('click', function () {
+
     magica.innerText = 'Codificar!'
+    magica.setAttribute('onClick', 'encodeText()')
 })
 
-var decoding = document.querySelector('#decode') 
+var decoding = document.getElementById('decode')
 
-decoding.addEventListener('click', function() {
+decoding.addEventListener('click', function () {
     magica.innerText = "Decodificar!"
-    
+    magica.setAttribute('onClick', 'decodeText()')
+
 })
 
+// criando funções base64 e cifra de césar
+
+function encodeText() {
+    let deslocamento = Number(document.getElementById('incremento').value)
+    let selecao = document.getElementById("codigo")
+    if (selecao.value = 'caesarCipher') {
+        outputDaMensagem(algoritmoCaesar(inputDoUsuario(), deslocamento))
+    } else if (selecao.value == 'base64') {
+        outputDaMensagem(algoritmoBase64(inputDoUsuario()))
+    } else { outputDaMensagem('Escolha um algoritmo no menu') }
+}
+
+function decodeText() {
+    let deslocamento = 26 - Number(document.getElementById('incremento').value)
+    let selecao = document.getElementById("codigo")
+    if (selecao.value = 'caesarCipher') {
+        outputDaMensagem(algoritmoCaesar(inputDoUsuario(), deslocamento))
+    } else if (selecao.value == 'base64') {
+        outputDaMensagem(algoritmoBase64(inputDoUsuario()))
+    } else { outputDaMensagem('Escolha um algoritmo no menu') }
+}
+
+// Lógica Cifra de César
+
+function algoritmoCaesar(mensagem, passos) {
+    let caesarLogic = []
+    let mensagemCifrada = ''
+
+    for (i = 0; i <= mensagem.length; i++) {
+        let varCaesar = mensagem.charCodeAt(i)
+        if (1) {
+            if (varCaesar >= 97) {
+                varCaesar = (varCaesar - 97 + passos) % 26 + 97
+            } else {
+                varCaesar = (varCaesar - 65 + passos) % 26 + 65
+            }
+            mensagemCifrada = mensagemCifrada + String.fromCharCode(varCaesar)
+        }
+    }
+    return mensagemCifrada
+}
+
+function algoritmoBase64(mensagem) {
 
 
-//function tipoDeCodigo() {
-//    const option = document.querySelector('tipoDeCodigo')
-//    const caesar = select.options[select]}
-
-
+}
