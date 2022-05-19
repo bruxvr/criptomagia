@@ -80,13 +80,13 @@ function decodeText() {
         outputDaMensagem(algoritmoCaesar(inputDoUsuario(), deslocamento))
     } else if (selecao.value == 'base64') {
         outputDaMensagem(atob(inputDoUsuario()))
-    } else { outputDaMensagem('Escolha um algoritmo no menu') }
+    } else { outputDaMensagem('Escolha um algoritmo no menu')
+}
 }
 
 // Lógica Cifra de César
 
 function algoritmoCaesar(mensagem, passos) {
-    let caesarLogic = []
     let mensagemCifrada = ''
 
     for (i = 0; i <= mensagem.length; i++) {
