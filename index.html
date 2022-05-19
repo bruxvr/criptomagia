@@ -25,9 +25,8 @@
             <p>Criptografia em um passe de mágica</p>
 
             <section class="escolha">
-
-                <!-- radio button: base64 ou cifra -->
-
+                
+                <!-- : base64 ou cifra -->
                 <select name="codigo" id="codigo">
                     <option value="tipoDeCodigo" disabled selected>Selecione a opção</option>
                     <option value="caesarCipher">Cifra de César</option>
@@ -35,10 +34,10 @@
                 </select>
                 
                     <!--  incremento caso cifra de cesar  -->
-                <input class="incremento" id="incremento" type="number" placeholder="Número de passos">
+                <input class="incremento" id="incremento" type="number" min="1" max="25" placeholder="Número de passos">
                 <div class="metodo">
                     
-                    <!-- codificar ou decodificar -->
+                    <!-- radio button: codificar ou decodificar -->
                     <input type="radio" id="encode" name="escolhaDeMetodo" value="encode">
                     <label for="escolhaDeMetodo">Codificar</label>
                 </div>

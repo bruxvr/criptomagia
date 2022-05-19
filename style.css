@@ -5,19 +5,38 @@
 body {
     background-image: linear-gradient(to bottom right, #E0BCF3, #7EE7EE);
     background-size: cover;
+    text-align: center;
+    align-items: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
 }
 
-body section textarea {
+body .container {
+    width: 600px;
+    height: 100vh;
+    border-radius: 12px;
+    align-items: center;
+    backdrop-filter:blur(20px) 
+    brightness(113%);
+    height: fit-content;
+    padding: 40px;
+    gap: 10px;
+
+}
+
+body h1 {
+    color: #E0BCF3;
+}
+
+body form section textarea {
     height: 10em; 
     /*  rows  */
-    width: 33em;
+    width: 20em;
     /* cols */
-    
-}
-form .container {
-    border: 1px solid red;
-    
-
+    border-radius: 12px;
+    padding: 10px;
+    font-size: 13px;
 }
 
 /*  display none se nenhuma opção estiver marcada */
@@ -25,24 +44,27 @@ body form section .incremento {
     display: none;
 }
 
-
-
 body form section .mensagem-usuario {
     display: column;
 }
 
+
 body form button {
-    background-color: black;
+    background-color: #E0BCF3;
     color: white;
     border-radius: 12px;
+    border: transparent;
     width: 200px;
-    height: 6vh;
-    font-weight: bold;
+    height: 8vh;
     cursor: pointer;
+    font-size: 18px;
 }
 
-body form textarea {
-    border-radius: 8px;
+body form button:hover {
+    background-color: black;
+    cursor: pointer;
+    border: transparent;
 }
+
 
 
