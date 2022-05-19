@@ -22,7 +22,7 @@
  </header>
     <!-- FORM  -->
         <form action="" class="container">
-            <section class="escolha">
+            <fieldset class="escolha">
 
                 <!-- radio button: base64 ou cifra -->
 
@@ -32,28 +32,29 @@
                     <option value="base64">Base64</option>
                 </select>
                 
-                <!-- codificar ou decodificar -->
-
-                <input class="incremento" id="incremento" type="number" placeholder="Número de passinhos">
+                    <!--  incremento caso cifra de cesar  -->
+                <input class="incremento" id="incremento" type="number" placeholder="Número de passos">
                 <div class="metodo">
-                    <input checked type="radio" id="encode" name="escolhaDeMetodo" value="encode">
+                    
+                    <!-- codificar ou decodificar -->
+                    <input type="radio" id="encode" name="escolhaDeMetodo" value="encode">
                     <label for="escolhaDeMetodo">Codificar</label>
                 </div>
                 <div class="metodo">
                     <input type="radio" id="decode" name="escolhaDeMetodo">
                     <label for="escolhaDeMetodo">Decodificar</label>
                 </div>
-            </section>
+            </fieldset>
             
             <!-- ENTRADA DO USUÁRIO -->
 
-            <section class="mensagem-usuario">
-                <textarea class="texto" id="input" name="mensagem" placeholder="Sua mensagem"></textarea>
-                <textarea class="texto" id="output" name="resultado" placeholder= "Resultado" readonly></textarea>
+            <fieldset class="mensagem-usuario">
+                <textarea class="texto" id="inputDoUsuario" name="mensagem" placeholder="Sua mensagem"></textarea>
+                <textarea class="texto" id="outputDaMensagem" name="resultado" placeholder= "Resultado" readonly></textarea>
             
                 <!-- readonly -> box apenas para resultado -->
-            </section>
-            <button type="button" id="magica">Mágica</button>
+            </fieldset>
+            <button type="button" id="magica">Codificar ou decodificar</button>
             <button type="button" id="botaoReset">RESET</button>
 
 
