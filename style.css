@@ -7,19 +7,42 @@ body {
     background-size: cover;
 }
 
-body fieldset textarea {
+body section textarea {
     height: 10em; 
     /*  rows  */
     width: 33em;
     /* cols */
     
 }
+form .container {
+    border: 1px solid red;
+    
+
+}
+
 /*  display none se nenhuma opção estiver marcada */
-body form fieldset .incremento {
+body form section .incremento {
     display: none;
 }
 
-header h1, p {
-    text-align: center;
 
+
+body form section .mensagem-usuario {
+    display: column;
 }
+
+body form button {
+    background-color: black;
+    color: white;
+    border-radius: 12px;
+    width: 200px;
+    height: 6vh;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+body form textarea {
+    border-radius: 8px;
+}
+
+

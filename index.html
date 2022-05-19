@@ -16,13 +16,15 @@
 <body>
     <!-- HEADER -->
  <header>
-     <h1 class="titulo">CRIPTOMAGIA</h1>
-     <p>Criptografia em um passe de mágica</p>
+     
 
  </header>
     <!-- FORM  -->
         <form action="" class="container">
-            <fieldset class="escolha">
+            <h1 class="titulo">CRIPTOMAGIA</h1>
+            <p>Criptografia em um passe de mágica</p>
+
+            <section class="escolha">
 
                 <!-- radio button: base64 ou cifra -->
 
@@ -41,19 +43,20 @@
                     <label for="escolhaDeMetodo">Codificar</label>
                 </div>
                 <div class="metodo">
-                    <input type="radio" id="decode" name="escolhaDeMetodo">
+                    <input type="radio" id="decode" name="escolhaDeMetodo" value="decode">
                     <label for="escolhaDeMetodo">Decodificar</label>
                 </div>
-            </fieldset>
+            </section>
             
             <!-- ENTRADA DO USUÁRIO -->
 
-            <fieldset class="mensagem-usuario">
+            <section class="mensagem-usuario">
                 <textarea class="texto" id="inputDoUsuario" name="mensagem" placeholder="Sua mensagem"></textarea>
-                <textarea class="texto" id="outputDaMensagem" name="resultado" placeholder= "Resultado" readonly></textarea>
+                <textarea class="texto1" id="outputDaMensagem" name="resultado" placeholder= "Resultado" readonly></textarea>
             
                 <!-- readonly -> box apenas para resultado -->
-            </fieldset>
+            </section>
+            
             <button type="button" id="magica">Codificar ou decodificar</button>
             <button type="button" id="botaoReset">RESET</button>
 
