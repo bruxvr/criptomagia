@@ -17,6 +17,7 @@ function inputDoUsuario() {
 }
 
 // retorno codificado/decodificado do input do usuário
+
 function outputDaMensagem(resultadoDaMensagem) {
     let output = document.querySelector('#outputDaMensagem')
     output.value = resultadoDaMensagem
@@ -24,15 +25,16 @@ function outputDaMensagem(resultadoDaMensagem) {
 }
 
 // função para verificar qual tipo de código o usuário escolheu no radio button
+
 var tipoDeCodigo = document.querySelector('#codigo')
 
 tipoDeCodigo.addEventListener('change', function (tipoDeCodigo) {
     var codigoEscolhido = tipoDeCodigo.target.value
-
+    console.log(codigoEscolhido)
     if (codigoEscolhido == 'base64') {
         incremento.style.display = 'none'
     }
-    else {
+    else if (codigoEscolhido == 'caesarCipher') {
         incremento.style.display = 'inline'
     }
 
@@ -40,43 +42,44 @@ tipoDeCodigo.addEventListener('change', function (tipoDeCodigo) {
 })
 
 // trocando escrita do botão -> codificar e decodificar
+
 var magica = document.getElementById('magica')
 
 var encoding = document.getElementById('encode')
+var decoding = document.getElementById('decode')
 
-encoding.addEventListener('click', function () {
+encoding.addEventListener('click', function() {
 
     magica.innerText = 'Codificar!'
     magica.setAttribute('onClick', 'encodeText()')
 })
 
-var decoding = document.getElementById('decode')
 
-decoding.addEventListener('click', function () {
+decoding.addEventListener('click', function() {
     magica.innerText = "Decodificar!"
     magica.setAttribute('onClick', 'decodeText()')
 
 })
 
-// criando funções base64 e cifra de césar
+// criando funções de codificar e decodificar
 
 function encodeText() {
     let deslocamento = Number(document.getElementById('incremento').value)
     let selecao = document.getElementById("codigo")
-    if (selecao.value = 'caesarCipher') {
+    if (selecao.value == 'caesarCipher') {
         outputDaMensagem(algoritmoCaesar(inputDoUsuario(), deslocamento))
     } else if (selecao.value == 'base64') {
-        outputDaMensagem(algoritmoBase64(inputDoUsuario()))
+        outputDaMensagem(btoa(inputDoUsuario()))
     } else { outputDaMensagem('Escolha um algoritmo no menu') }
 }
 
 function decodeText() {
     let deslocamento = 26 - Number(document.getElementById('incremento').value)
     let selecao = document.getElementById("codigo")
-    if (selecao.value = 'caesarCipher') {
+    if (selecao.value == 'caesarCipher') {
         outputDaMensagem(algoritmoCaesar(inputDoUsuario(), deslocamento))
     } else if (selecao.value == 'base64') {
-        outputDaMensagem(algoritmoBase64(inputDoUsuario()))
+        outputDaMensagem(atob(inputDoUsuario()))
     } else { outputDaMensagem('Escolha um algoritmo no menu') }
 }
 
@@ -88,10 +91,10 @@ function algoritmoCaesar(mensagem, passos) {
 
     for (i = 0; i <= mensagem.length; i++) {
         let varCaesar = mensagem.charCodeAt(i)
-        if (1) {
-            if (varCaesar >= 97) {
+        if (mensagem.match(/[a-z]/i)) {
+            if (varCaesar >= 97 && varCaesar <=122) {
                 varCaesar = (varCaesar - 97 + passos) % 26 + 97
-            } else {
+            } else if (varCaesar >= 65 && varCaesar <=90){
                 varCaesar = (varCaesar - 65 + passos) % 26 + 65
             }
             mensagemCifrada = mensagemCifrada + String.fromCharCode(varCaesar)
@@ -100,7 +103,14 @@ function algoritmoCaesar(mensagem, passos) {
     return mensagemCifrada
 }
 
-function algoritmoBase64(mensagem) {
+// botão RESET //
 
-
-}
+var buttonReset = document.querySelector('#botaoReset')
+var textAreaInput = document.getElementById('inputDoUsuario')
+var textAreaOutput = document.getElementById('outputDaMensagem')
+console.log(buttonReset)
+console.log(textAreaInput)
+buttonReset.addEventListener('click', function(){
+    textAreaInput.value = ' '
+    textAreaOutput.value = ' '
+})
