@@ -7,14 +7,19 @@ body {
     background-size: cover;
 }
 
-section textarea {
+body fieldset textarea {
     height: 10em; 
     /*  rows  */
     width: 33em;
     /* cols */
+    
+}
+/*  display none se nenhuma opção estiver marcada */
+body form fieldset .incremento {
+    display: none;
 }
 
 header h1, p {
     text-align: center;
-    
+
 }
